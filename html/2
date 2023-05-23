@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Website</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,36 +12,122 @@
       padding: 0;
     }
 
-    header, footer {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
+header, footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
 
-    main {
-      padding: 20px;
-    }
+main {
+  padding: 20px;
+}
+
+/* Зміна кольору посилань, які починаються з https */
+a[href^="https"] {
+  color: red;
+}
+
+/* Зміна кольору останнього посилання в першому списку */
+ol:first-of-type li:last-of-type a {
+  color: green;
+  background-color: #ffffff;
+}
+
+/* Зміна розміру шрифту для <p> після <ul> */
+ul + p {
+  font-size: 26px;
+}
   </style>
 </head>
 <body>
   <header>
     <h1>My Website</h1>
   </header>
-
   <main>
     <h2>Content Section</h2>
     <img src="download.jpg" alt="Website Icon">
 
-    <ol>
-      <li><strong>First item</strong></li>
-      <li><em>Second item</em></li>
-      <li><u>Third item</u></li>
-      <li><a href="http://www.google.com.ua" target="_blank">Fourth item</a></li>
-      <li style="color: red;">Fifth item</li>
-    </ol>
-  </main>
+<ol>
+  <li><strong>First item</strong></li>
+  <li><em>Second item</em></li>
+  <li><u>Third item</u></li>
+  <li><a href="http://www.google.com.ua" target="_blank">Fourth item</a></li>
+  <li style="color: red;">Fifth item</li>
+  <li><a href="https://example.com">Sixth item</a></li>
+</ol>
 
+<ul>
+  <li>List item 1</li>
+  <li>List item 2</li>
+</ul>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+.container {
+max-width: 400px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.form-group {
+margin-bottom: 15px;
+}
+
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+width: 100%;
+padding: 8px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+button {
+padding: 10px 20px;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #555;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Contact Form</h2>
+  <form action="submit.php" method="post">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<p>Paragraph after list</p>
+  </main>
   <footer>
     &copy; 2023 My Website
   </footer>
